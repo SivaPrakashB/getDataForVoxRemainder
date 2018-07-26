@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var a=0
     var completed_reminders_messagesList=[String]()
     var completed_reminders_dateList=[String]()
     var completed_reminders_receipientsNames=[String]()
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         getDataFromServer()
     }
 
+    @IBOutlet weak var label: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,6 +101,22 @@ func getDataFromServer()
     task.resume() //start downlaod
     
     }
+    
+    @IBAction func next(_ sender: UIButton) {
+        if a==completed_reminders_dateList.count-1
+        {
+            a=0
+            label.text=completed_reminders_receipientsNames[a]
+        }
+        else
+        {
+            a=a+1
+            label.text=completed_reminders_receipientsNames[a]
+        }
+    }
+    
+    
+    
     }
 
 
