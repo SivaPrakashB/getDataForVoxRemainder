@@ -19,7 +19,7 @@ class AddOnResponse {
 }
 
 
-class completed_reminders {
+/*class completed_reminders {
     
     
     
@@ -49,20 +49,20 @@ class completed_reminders {
        self.alertStatus = alertStatus
        self.audioContentType = audioContentType
        self.audioFileId = audioFileId
-    self.category = category
-      self.createdDate = createdDate
-        self.date = date
-        self.id = id
-        self.imageContentType = imageContentType
-        self.imageFileId = imageFileId
-        self.message = message
-        self.modifiedDate = modifiedDate
+       self.category = category
+       self.createdDate = createdDate
+       self.date = date
+       self.id = id
+       self.imageContentType = imageContentType
+       self.imageFileId = imageFileId
+       self.message = message
+       self.modifiedDate = modifiedDate
        self.recipients = recipients
-      self.recipientsNames = recipientsNames
-      self.status = status
+       self.recipientsNames = recipientsNames
+       self.status = status
        self.time = time
-         self.timeZoneId = timeZoneId
-     self.userId = userId
+       self.timeZoneId = timeZoneId
+       self.userId = userId
         
         
     }
@@ -117,5 +117,5 @@ class upcoming_reminders {
         
     }
 }
-
+*/
 
