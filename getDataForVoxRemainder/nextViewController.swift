@@ -12,9 +12,21 @@ class nextViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-    var abc=addOnRes!.completed_reminders
+        var abc:[NSDictionary]=addOnRes!.completed_reminders as! [NSDictionary]
+        for value in abc
+        {
+            var dummyDict1=value as! NSDictionary
+            var message=dummyDict1.object(forKey: "message") as! String
+            var recipientsNames=dummyDict1.object(forKey: "recipientsNames") as! String
+            var date = dummyDict1.object(forKey: "date") as! String
+            
+           print("completed_reminders_message:",message)
+            print("completed_reminders_date:",date)
+          print("completed_reminders_recipientsNames:",recipientsNames)
+         print("***********************************************")
+        }
        
- print(abc,"88888")
+ //print(abc,"88888")
         // Do any additional setup after loading the view.
     }
 
