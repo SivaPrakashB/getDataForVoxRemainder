@@ -9,9 +9,24 @@
         import UIKit
         
         class nextViewController: UIViewController {
-            
+            let buttonA=UIButton()
             override func viewDidLoad() {
                 super.viewDidLoad()
+               // buttonA.frame=CGRect(x: 10, y: 10, width: 100, height: 200)
+                buttonA.backgroundColor=UIColor.green
+                buttonA.setTitle("DismissView", for: .normal)
+                buttonA.addTarget(self, action: #selector(dimissView), for: .touchUpInside)
+                self.view.addSubview(buttonA)
+                //apply constrains to button
+                buttonA.translatesAutoresizingMaskIntoConstraints = false
+                let horizontalConstraint = NSLayoutConstraint(item: buttonA, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+                let verticalConstraint = NSLayoutConstraint(item: buttonA, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+                let widthConstraint = NSLayoutConstraint(item: buttonA, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200)
+                let heightConstraint = NSLayoutConstraint(item: buttonA, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 100)
+                view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+                
+                
+                
                 guard let abc:[NSDictionary]=addOnRes?.completed_reminders else {
                     return print("Model view class is empty")
                 }
@@ -74,5 +89,11 @@
                 task.resume()
                 
             }
-            
+            @objc func dimissView()
+            {
+                dismiss(animated: true, completion: nil)
+            }
+            override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                dismiss(animated: true, completion: nil)
+            }
         }
