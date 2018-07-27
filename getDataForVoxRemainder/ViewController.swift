@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+ var addOnRes:AddOnResponse?
 class ViewController: UIViewController {
     var a=0
     var completed_reminders_messagesList=[String]()
@@ -16,8 +16,18 @@ class ViewController: UIViewController {
     var upcoming_reminders_messagesList=[String]()
     var upcoming_reminders_dateList=[String]()
     var upcoming_reminders_receipientsNames=[String]()
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let date = Date()
+        let calendar = Calendar.current
+        let day=calendar.component(.day, from: date)
+        let month=calendar.component(.month, from: date)
+        let year=calendar.component(.year, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
         // Do any additional setup after loading the view, typically from a nib.
         getDataFromServer()
     }
@@ -50,7 +60,12 @@ func getDataFromServer()
                     do
                     {
                         let resDict = try JSONSerialization.jsonObject(with: downloadData!, options: .allowFragments) as! NSDictionary
+                        addOnRes = AddOnResponse(completed_reminders:resDict.object(forKey: "completed_reminders") as! [NSDictionary], upcoming_reminders:resDict.object(forKey: "upcoming_reminders") as! [NSDictionary])
+                       // print(AddOnResponse.count)
+                        //print(self.addOnRes!.completed_reminders)
+                       // print(self.addOnRes!.upcoming_reminders)
                         var completed_reminders=resDict.object(forKey: "completed_reminders") as! NSArray
+                        var upcoming_reminders=resDict.object(forKey: "upcoming_reminders") as! NSArray
                         for value in completed_reminders
                         {
                             var dummyDict1=value as! NSDictionary
@@ -60,12 +75,12 @@ func getDataFromServer()
                             self.completed_reminders_messagesList.append(message)
                             self.completed_reminders_dateList.append(date)
                             self.completed_reminders_receipientsNames.append(recipientsNames)
-                            print("completed_reminders_message:",message)
-                            print("completed_reminders_date:",date)
-                            print("completed_reminders_recipientsNames:",recipientsNames)
-                            print("***********************************************")
+                           // print("completed_reminders_message:",message)
+                           // print("completed_reminders_date:",date)
+                           // print("completed_reminders_recipientsNames:",recipientsNames)
+                           // print("***********************************************")
                         }
-                        var upcoming_reminders=resDict.object(forKey: "upcoming_reminders") as! NSArray
+                       
                         for value in upcoming_reminders
                         {
                             var dummyDict1=value as! NSDictionary
@@ -75,10 +90,10 @@ func getDataFromServer()
                             self.upcoming_reminders_messagesList.append(message)
                             self.upcoming_reminders_dateList.append(date)
                             self.upcoming_reminders_receipientsNames.append(recipientsNames)
-                            print("upcoming_reminders_message:",message)
-                            print("upcoming_reminders_date:",date)
-                            print("upcoming_reminders_recipientsNames:",recipientsNames)
-                            print("***********************************************")
+                            //print("upcoming_reminders_message:",message)
+                           // print("upcoming_reminders_date:",date)
+                           // print("upcoming_reminders_recipientsNames:",recipientsNames)
+                           // print("***********************************************")
                         }
          
                       

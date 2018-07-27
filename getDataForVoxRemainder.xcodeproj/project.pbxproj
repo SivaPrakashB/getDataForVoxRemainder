@@ -13,6 +13,8 @@
 		18CDBE7721098C8400E594E8 /* getDataForVoxRemainder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBE7521098C8400E594E8 /* getDataForVoxRemainder.xcdatamodeld */; };
 		18CDBE7921098C8600E594E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CDBE7821098C8600E594E8 /* Assets.xcassets */; };
 		18CDBE7C21098C8700E594E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CDBE7A21098C8700E594E8 /* LaunchScreen.storyboard */; };
+		18E1587E210AF67B0006401C /* abc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1587D210AF67B0006401C /* abc.swift */; };
+		18E15880210AFC160006401C /* nextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1587F210AFC160006401C /* nextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		18CDBE7821098C8600E594E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CDBE7B21098C8700E594E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18CDBE7D21098C8700E594E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18E1587D210AF67B0006401C /* abc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abc.swift; sourceTree = "<group>"; };
+		18E1587F210AFC160006401C /* nextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				18CDBE7A21098C8700E594E8 /* LaunchScreen.storyboard */,
 				18CDBE7D21098C8700E594E8 /* Info.plist */,
 				18CDBE7521098C8400E594E8 /* getDataForVoxRemainder.xcdatamodeld */,
+				18E1587D210AF67B0006401C /* abc.swift */,
+				18E1587F210AFC160006401C /* nextViewController.swift */,
 			);
 			path = getDataForVoxRemainder;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			files = (
 				18CDBE7121098C8400E594E8 /* ViewController.swift in Sources */,
 				18CDBE6F21098C8400E594E8 /* AppDelegate.swift in Sources */,
+				18E1587E210AF67B0006401C /* abc.swift in Sources */,
+				18E15880210AFC160006401C /* nextViewController.swift in Sources */,
 				18CDBE7721098C8400E594E8 /* getDataForVoxRemainder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
