@@ -30,6 +30,7 @@
                 guard let abc:[NSDictionary]=addOnRes?.completed_reminders else {
                     return print("Model view class is empty")
                 }
+             
                 //getTheDataFromServer()
                 for value in abc
                 {
